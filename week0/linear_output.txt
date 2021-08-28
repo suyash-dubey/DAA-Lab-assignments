@@ -1,0 +1,5 @@
+Enter size of array: 
+Enter elements: 
+Enter an element to search: 
+ELEMENT FOUND
+Number of comparisons: 2
