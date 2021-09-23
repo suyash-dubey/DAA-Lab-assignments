@@ -1,3 +1,4 @@
+//SUYASH DUBEY    SECTION C    2014907
 #include <iostream>
 using namespace std;
 void selectsort(int a[],int n)
@@ -18,11 +19,13 @@ void selectsort(int a[],int n)
             }
         }
     }
+    //SUYASH DUBEY    SECTION C    2014907
     for(i=0;i<n;i++)
      cout<<a[i]<<" ";
     cout<<endl<<"comparisons "<<k;
     cout<<endl<<"swaps "<<c;
 }
+//SUYASH DUBEY    SECTION C    2014907
 int main()
 {
     int n,i,size,j;
@@ -38,4 +41,5 @@ int main()
          cin>>a[j];
         selectsort(a,size);
     }
+    //SUYASH DUBEY    SECTION C    2014907
 }
