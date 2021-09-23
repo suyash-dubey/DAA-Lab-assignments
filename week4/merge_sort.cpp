@@ -1,83 +1,85 @@
-#include<iostream>
-#include<bits/stdc++.h>
-#include<algorithm>
+#include <iostream>
+//SUYASH DUBEY    SECTION C 2014907
+#include <fstream>
 using namespace std;
-int merge(int *a,int low, int mid, int high)
-{
-    int temp[20];
-    int c=0;
-    int i=low, j=mid+1, index =low;
-    while(i<=mid && j<=high)
-    {
-        if(a[i]<a[j])
-        {   temp[index]=a[i];
-            i++;
-            c++;
-        }
-        else
-        {   temp[index]=a[j];
-            j++;
-            c++;
-        }
-        index++;
-    }
-    if(i<=mid)
-    {
-        while(i<=mid)
-        {   temp[index]=a[i];
-            i++;
-            index++;
-        }
-    }
-    else
-    {   while(j<=high)
-        {   temp[index]=a[j];
-            j++;
-            index++;
-        }
-
-    }
-    for(i=low;i<=high;i++)
-        a[i]=temp[i];
-        return c;
-
+//int count=0;
+//int minus=count;
+int inv=0;
+int merge(int arr[],int l,int m,int r){
+	static int count;
+	int n1=m-l+1;
+	int n2=r-m;
+	int L[n1],R[n2];
+	int i,j,k;
+	for(i=0;i<n1;i++){
+		L[i]=arr[l+i];
+	}
+	for(j=0;j<n2;j++){
+		R[j]=arr[m+j+1];
+	}
+	i=0,j=0,k=l;
+	while(i<n1&&j<n2){
+		if(L[i]<=R[j]){
+			arr[k]=L[i];
+			i++;
+			//inv++;
+		}
+		else{
+			arr[k]=R[j];
+			j++;
+			//inv++;
+		}
+		k++;
+		count++;
+	}
+	while(i<n1){
+		arr[k]=L[i];
+		i++;
+		k++;
+	}
+	while(j<n2){
+		arr[k]=R[j];
+		j++;
+		k++;
+	}
+	return count;
 }
-int merge_sort(int *a, int low, int high)
-{
-    int mid;
-    if(low<high)
-    {
-        mid=(low+high)/2;
-        merge_sort(a,low,mid);
-        merge_sort(a,mid+1,high);
-      int c=merge(a,low,mid,high);
-      return c;
-    }
+int mergeSort(int arr[],int l,int r){
+	int comp;
+	if(l<r){
+		
+		int m = l+(r-l)/2;
+		mergeSort(arr,l,m);
+		mergeSort(arr,m+1,r);
+		
+
+		comp=merge(arr,l,m,r);
+	}
+	return comp;
 }
+int main(){
+	ifstream in;
+	in.open("input.txt");
+	ofstream out;
+	out.open("output.txt");
+	int t;
+	in >> t;
+	int index=0;
+	int n,arr[111],arr1[t];
+	while(t--){
+		in >> n;
+		for(int i=0;i<n;i++)
+			in >> arr[i];
 
-
-
-int main()
-{
-  int t;
-  cin>>t;
-  while(t)
-  {
-  int n;
-  cin>>n;
-  int arr[n];
-  for(int i=0;i<n;i++)
-  {
-    cin>>arr[i];
-  }
-  int c=merge_sort(arr,0,n-1);
-  for(int i=0;i<n;i++)
-  {
-    cout<<"  "<<arr[i]<<" ";
-  }
-  cout<<endl;
-  cout<<"Comparisons: "<<c<<endl;
-  t--;
-}
-
+		int c=mergeSort(arr,0,n-1);
+		arr1[index]=c;
+		for(int i=0;i<n;i++)
+			out << arr[i] << " ";
+		if(index==0)
+		out<<endl <<"comparison = "<< c<<endl;
+		else
+		out<<endl <<"comparison = " << c-arr1[index-1]<<endl;
+		//cout << inv << endl;
+		index++;
+	}
 }
