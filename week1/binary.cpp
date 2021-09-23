@@ -1,9 +1,11 @@
+//SUYASH DUBEY    SECTION C    2014907
 #include <iostream>
 #include <vector>
 using namespace std;
 
 void binary_search(vector<int> v,int i, int h, int key){
     int mid = (0+h)/2;
+    //SUYASH DUBEY    SECTION C    2014907
     int c=1,flag = 0;
     while(h>=0 && i<v.size()-1){
         if(key > v[mid]){
@@ -22,13 +24,14 @@ void binary_search(vector<int> v,int i, int h, int key){
             break;
         }
     }
+    //SUYASH DUBEY    SECTION C    2014907
     if(flag!=1){
         cout << "\nNot Present: " << c+1;
     }
     flag=0;
 }
 
-
+//SUYASH DUBEY    SECTION C    2014907
 int main() {
     int n,size,ele,a,key;
     cin >> n;
@@ -40,9 +43,11 @@ int main() {
             cin >> ele;
             v1.push_back(ele);
         }
+        //SUYASH DUBEY    SECTION C    2014907
         v.push_back(v1);
         cin >> key;
         binary_search(v[i], 0, size , key);
     }
     return 0;
 }
+//SUYASH DUBEY    SECTION C    2014907
