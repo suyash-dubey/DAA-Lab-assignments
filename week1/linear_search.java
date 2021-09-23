@@ -1,4 +1,5 @@
 import java.util.*;
+//SUYASH DUBEY    SECTION C    2014907
 class linear_search
 {
   public static void main(String om[])
@@ -14,6 +15,7 @@ class linear_search
       {
         a[j]=sc.nextInt();
       }
+      //SUYASH DUBEY    SECTION C    2014907
       key=sc.nextInt();
       int count=0;
       boolean flag=false;
@@ -35,6 +37,7 @@ class linear_search
         System.out.println("Not Present"+count);
       }
     }
-
+//SUYASH DUBEY    SECTION C    2014907
   }
 }
+//SUYASH DUBEY    SECTION C    2014907
