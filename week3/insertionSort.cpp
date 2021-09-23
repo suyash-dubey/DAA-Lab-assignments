@@ -1,3 +1,4 @@
+//SUYASH DUBEY    SECTION C    2014907
 #include <iostream>
 using namespace std;
 void insertsort(int a[],int n)
@@ -16,6 +17,7 @@ void insertsort(int a[],int n)
             j=j-1;
             c++;
         }
+        //SUYASH DUBEY    SECTION C    2014907
         if(flag==1)
         {
           a[j+1]=t;
@@ -27,6 +29,7 @@ void insertsort(int a[],int n)
     cout<<endl<<"no. of shifts "<<c;
     cout<<endl<<"no. of comparisons "<<s;
 }
+//SUYASH DUBEY    SECTION C    2014907
 int main()
 {
     int n,i,j,size;
@@ -42,4 +45,5 @@ int main()
          cin>>a[j];
        insertsort(a,size);
     }
+    //SUYASH DUBEY    SECTION C    2014907
 }
