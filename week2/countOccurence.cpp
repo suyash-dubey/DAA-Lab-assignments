@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+//SUYASH DUBEY    SECTION C    2014907
 using namespace std;
 
 int binary(vector<int> v, int l, int h, int f){
@@ -21,6 +22,7 @@ int count(vector<int> v, int s, int f){
     int ind = binary(v, 0, s-1, f);
     if(ind == -1)
         return 0;
+    //SUYASH DUBEY    SECTION C    2014907
     int count = 1;
     int left = ind-1;
     while(left >=0 && v[left] == f){
@@ -34,6 +36,7 @@ int count(vector<int> v, int s, int f){
     }
     return count;
 }
+//SUYASH DUBEY    SECTION C    2014907
 
 int main() {
     int t, s, ele, res=0, f;
@@ -49,5 +52,6 @@ int main() {
         int res = count(v, s, f);
         cout << "Number of times " << f << " appear is: " << res << "\n";
     }
+    //SUYASH DUBEY    SECTION C    2014907
     return 0;
 }
