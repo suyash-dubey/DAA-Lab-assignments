@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+//SUYASH DUBEY    SECTION C    2014907
 using namespace std;
 
 int main() {
     int n,size,ele,c=0,flag=0,find;
     cin >> n;
+    //SUYASH DUBEY    SECTION C    2014907
     vector<vector<int>> v;
     for(int i=0; i<n; i++){
         cin >> size;
@@ -22,10 +24,12 @@ int main() {
             }
             c++;
         }
+        //SUYASH DUBEY    SECTION C    2014907
         if(flag!=0)
             cout << "Present: " <<c+1 <<"\n";
         else
             cout << "Not Present: "<< c<<"\n";
         flag=0;
+        //SUYASH DUBEY    SECTION C    2014907
         c=0;
     }
