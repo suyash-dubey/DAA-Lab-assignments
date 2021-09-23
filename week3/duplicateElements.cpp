@@ -1,3 +1,4 @@
+//SUYASH DUBEY    SECTION C    2014907
 #include <iostream>
 using namespace std;
 void sorting(int a[],int n)
@@ -16,6 +17,7 @@ void sorting(int a[],int n)
         }
     }
 }
+//SUYASH DUBEY    SECTION C    2014907
 int main()
 {
     int n,i,j,flag=0,size;
@@ -37,9 +39,10 @@ int main()
                 flag=1;
                 cout<<"YES";
                 break;
-            }
+            }//SUYASH DUBEY    SECTION C    2014907
         }
     }
     if(flag==0)
      cout<<"NO";
+    //SUYASH DUBEY    SECTION C    2014907
 }
